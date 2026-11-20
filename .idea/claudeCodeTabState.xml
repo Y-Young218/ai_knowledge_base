@@ -8,8 +8,9 @@
             <TabSessionState>
               <option name="projectPath" value="D:\code_python1\ai_knowledge_base" />
               <option name="provider" value="claude" />
+              <option name="sessionId" value="d11c8ee7-1716-495c-b727-3749e95d6587" />
               <option name="cwd" value="D:\code_python1\ai_knowledge_base" />
-              <option name="model" value="claude-sonnet-5" />
+              <option name="model" value="claude-sonnet-5[1m]" />
               <option name="permissionMode" value="auto" />
               <option name="claudeSupplierId" value="80a2f196-85b5-4707-9331-4ef79f341ea4" />
               <option name="codexSupplierId" value="__session_supplier_unavailable__" />
