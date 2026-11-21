@@ -24,4 +24,4 @@ class InfraConfig:
 
 infra_config = InfraConfig()
 
-print(infra_config.app.import_app_name)
+# print(infra_config.app.import_app_name)
