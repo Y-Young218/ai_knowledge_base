@@ -7,3 +7,8 @@ MINERU_POLL_TIMEOUT_SECONDS = 600
 MINERU_POLL_INTERVAL_SECONDS = 3
 # MinerU 文件下载超时时间（单位：秒），下载文件超过此时长则中断
 MINERU_DOWNLOAD_TIMEOUT_SECONDS = 600
+
+# 图片上下文的长度,约定100个字符
+IMAGE_CONTEXT_CHAR_LENGTH = 100
+
+SUPPORTED_IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp"}
