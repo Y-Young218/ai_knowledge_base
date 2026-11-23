@@ -353,7 +353,7 @@ def parse_pdf_to_markdown(state: ImportGraphState) -> ImportGraphState:
 if __name__ == "__main__":
     logger.info("===== 开始 node_pdf_to_md 节点联调测试 =====")
 
-    test_pdf_path = os.path.join(PROJECT_ROOT, "doc", "hak180使用说明书.pdf")
+    test_pdf_path = os.path.join(PROJECT_ROOT, "doc", "华为擎云W585 用户指南-(PGUV,KOS&UOS_01,zh-cn).pdf")
     test_state = create_default_state(
         task_id="test_pdf2md_task_001",
         pdf_path=test_pdf_path,

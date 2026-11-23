@@ -11,7 +11,7 @@ _DEFAULT_LLM_MODEL = "qwen3-32b"
 _DEFAULT_TEMPERATURE = 0.1
 _llm_client_cache: dict[tuple[str, bool], ChatOpenAI] = {}
 
-
+# 带有缓存能力
 def get_llm_client(model: str | None = None, json_mode: bool = False) -> ChatOpenAI:
     """
     获取带全局缓存的LangChain ChatOpenAI客户端实例
@@ -58,8 +58,8 @@ def get_llm_client(model: str | None = None, json_mode: bool = False) -> ChatOpe
             temperature=lm_config.llm_temperature or _DEFAULT_TEMPERATURE,  # 低温度保证输出确定性（0~1）
             api_key=lm_config.api_key,  # API密钥
             base_url=lm_config.base_url,  # API基础地址（适配国产模型代理地址）
-            extra_body=extra_body,  # 国产模型私有参数透传
-            model_kwargs=model_kwargs,  # OpenAI通用参数
+            extra_body=extra_body,  # 国产模型私有参数透传，国产模型的参数
+            model_kwargs=model_kwargs,  # OpenAI通用参数,更新的参数可以放在这个中 例如：model_kwargs:{"openai的参数":值}
         )
     except LangChainException as e:
         raise Exception(f"[LLM客户端] 模型【{target_model}】初始化失败（LangChain层）：{str(e)}") from e
