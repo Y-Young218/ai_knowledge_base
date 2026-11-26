@@ -1,3 +1,4 @@
+from app.shared.model import generate_embeddings
 from app.shared.model.lm_utils import get_llm_client
 from app.infra.config.providers import infra_config
 
@@ -16,6 +17,8 @@ class LLMProvider():
 
     # ------------ 后续修改扩展 ----------
     # 嵌入式模型
+    def generate_infra_embeddings(self, texts: list[str]) -> dict[str, list]:
+        return generate_embeddings(texts)
 
     # 重排序模型
 

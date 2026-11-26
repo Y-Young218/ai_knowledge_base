@@ -5,7 +5,7 @@ from pymilvus import MilvusClient, AnnSearchRequest, WeightedRanker
 from app.shared.config.milvus_config import milvus_config
 from app.shared.runtime.logger import logger
 
-# 全局Milvus客户端实例，实现单例复用
+# 全局Milvus客户端实例，实现单例复用(缓存客户端，不能反复加载)
 _milvus_client: MilvusClient | None = None
 
 
