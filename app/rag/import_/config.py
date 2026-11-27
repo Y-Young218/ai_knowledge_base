@@ -24,3 +24,5 @@ CHUNK_MIN = 400
 
 # item_name识别的时候,截取chunks的前几个对应的切块
 ITEM_NAME_RECOGNITION_CHUNKS_TOP_K = 5
+
+EMBEDDING_BATCH_SIZE=5

@@ -57,7 +57,7 @@ def call_llm_item_name_recognition(chunks: list[dict[str, Any]], file_title: str
         context += f"父标题:{chunk.get('parent_title')},第{chunk.get('part')}部分,内容为: {chunk.get('content')}\n"
     recognition_prompt: str = load_prompt("item_name_recognition", file_title=file_title, context=context)
     message = HumanMessage(
-        context=recognition_prompt,
+        content=recognition_prompt,
     )
     # 2.3 定义调用链chain对象  = 模型 | 输出结果处理器对象
     chains = llm_client | StrOutputParser()
@@ -160,7 +160,7 @@ def insert_item_name_collection(item_name, dense_vector, sparse_vector, file_tit
         # 坑2: == {file_title} 值当做列名
         filter=f"file_title == '{file_title}'"
     )
-    logger.info(f"已经完成数据删除，删除数据条数为：{result.get("delete_count")}")
+    logger.info(f"已经完成数据删除，删除数据条数为：{result.get('delete_count')}")
     # 5.2 插入新的item_name和file_title
     data: dict = {
         "file_title": file_title,
@@ -172,7 +172,7 @@ def insert_item_name_collection(item_name, dense_vector, sparse_vector, file_tit
         collection_name=milvus_gateway.item_name_collection,
         data=[data],  # 支持批量插入 [{}] 支持单条查询 {}
     )
-    logger.info(f"完成{item_name}数据插入，影响条数为:{insert_result.get("insert_count")}")
+    logger.info(f"完成{item_name}数据插入，影响条数为:{insert_result.get('insert_count')}")
 
 
 # 6. 完善chunks数据
